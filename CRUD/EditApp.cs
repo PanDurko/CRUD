@@ -1,20 +1,21 @@
-﻿using CRUD.Crud;
+﻿using CRUD.Facade;
 
 namespace CRUD
 {
     public partial class EditApp : Form
     {
-        private CrudOperations _operations;
+        private CrudFacade _facade;
 
         public EditApp()
         {
             InitializeComponent();
-            _operations = new CrudOperations();
+            _facade = new CrudFacade();
+            _facade.Init();
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            _operations.Update(int.Parse(targetIdTb.Text), int.Parse(newIdTb.Text), newFirstNameTb.Text, newLastNameTb.Text);
+            _facade.UpdateOperation.Update(int.Parse(targetIdTb.Text), int.Parse(newIdTb.Text), newFirstNameTb.Text, newLastNameTb.Text);
             MessageBox.Show("Changes saved!");
             this.Close();
         }
