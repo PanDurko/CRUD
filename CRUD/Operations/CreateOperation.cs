@@ -12,16 +12,15 @@ namespace CRUD.Operations
             _client = client;
         }
 
-        public void Create(int id, string firstName, string lastName)
+        public void Create(int targetId, string firstName, string lastName)
         {
-            User user = new User()
+            User newUser = new User()
             {
-                Id = id,
                 FirstName = firstName,
                 LastName = lastName
             };
 
-            _client.Set($"Users/{id}", user);
+            _client.Set($"Users/{targetId}", newUser);
         }
     }
 }

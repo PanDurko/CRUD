@@ -12,11 +12,11 @@ namespace CRUD.Operations
             _client = client;
         }
 
-        public User Read(int id)
+        public User Read(int targetId)
         {
-            var data = _client.Get($"Users/{id}");
-            User user = data.ResultAs<User>();
-            return user;
+            var targetUserData = _client.Get($"Users/{targetId}");
+            User outputUser = targetUserData.ResultAs<User>();
+            return outputUser;
         }
     }
 }

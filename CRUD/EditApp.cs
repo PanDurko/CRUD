@@ -15,7 +15,7 @@ namespace CRUD
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            _facade.UpdateOperation.Update(int.Parse(targetIdTb.Text), int.Parse(newIdTb.Text), newFirstNameTb.Text, newLastNameTb.Text);
+            _facade.UpdateOperation.Update(int.Parse(targetIdTb.Text), newFirstNameTb.Text, newLastNameTb.Text);
             MessageBox.Show("Changes saved!");
             this.Close();
         }

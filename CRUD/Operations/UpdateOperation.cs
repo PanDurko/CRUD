@@ -12,17 +12,16 @@ namespace CRUD.Operations
             _client = client;
         }
 
-        public void Update(int targetId, int newId, string firstName, string lastName)
+        public void Update(int targetId, string firstName, string lastName)
         {
-            User user = new User()
+            User updatedUser = new User()
             {
-                Id = newId,
+                Id = targetId,
                 FirstName = firstName,
                 LastName = lastName
             };
 
-            _client.Delete($"Users/{targetId}");
-            _client.Set($"Users/{newId}", user);
+            _client.Update($"Users/{targetId}", updatedUser);
         }
     }
 }

@@ -11,9 +11,9 @@ namespace CRUD.Operations
             _client = client;
         }
 
-        public void Delete(int id)
+        public void Delete(int targetId)
         {
-            _client.Delete($"Users/{id}");
+            _client.Delete($"Users/{targetId}");
         }
     }
 }
