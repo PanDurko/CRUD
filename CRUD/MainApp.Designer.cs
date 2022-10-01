@@ -1,6 +1,6 @@
 ﻿namespace CRUD
 {
-    partial class Form1
+    partial class MainApp
     {
         /// <summary>
         ///  Required designer variable.
@@ -128,7 +128,7 @@
             this.DeleteButton.UseVisualStyleBackColor = true;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
-            // Form1
+            // MainApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -143,8 +143,8 @@
             this.Controls.Add(this.lNameTb);
             this.Controls.Add(this.fNameTb);
             this.Controls.Add(this.IdTb);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "MainApp";
+            this.Text = "CRUD ";
             this.ResumeLayout(false);
             this.PerformLayout();
 

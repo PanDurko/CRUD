@@ -3,11 +3,11 @@ using CRUD.Crud;
 
 namespace CRUD
 {
-    public partial class Form1 : Form
+    public partial class MainApp : Form
     {
         private CrudOperations _operations;
 
-        public Form1()
+        public MainApp()
         {
             InitializeComponent();
             _operations = new CrudOperations();
@@ -29,8 +29,8 @@ namespace CRUD
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
-            _operations.Update(int.Parse(IdTb.Text), fNameTb.Text, lNameTb.Text);
-            MessageBox.Show("User info updated!");
+            EditApp editForm = new EditApp();
+            editForm.Show();
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)

@@ -1,5 +1,6 @@
 ﻿using CRUD.Core;
 using CRUD.Database;
+using FireSharp;
 using FireSharp.Interfaces;
 
 namespace CRUD.Crud
@@ -7,7 +8,7 @@ namespace CRUD.Crud
     public class CrudOperations
     {
         private DataBase _dataBase;
-        private IFirebaseClient _client; 
+        private IFirebaseClient _client;
 
         public CrudOperations()
         {
@@ -34,15 +35,17 @@ namespace CRUD.Crud
             return user;
         }
 
-        public void Update(int id, string firstName, string lastName)
+        public void Update(int targetId, int newId, string firstName, string lastName)
         {
             User user = new User()
             {
-                FirstName = firstName,
+                Id = newId, 
+                FirstName = firstName, 
                 LastName = lastName
             };
 
-            _client.UpdateAsync($"Users/{id}", user);
+            _client.Delete($"Users/{targetId}");
+            _client.Set($"Users/{newId}", user);
         }
 
         public void Delete(int id)
