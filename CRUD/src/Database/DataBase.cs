@@ -7,7 +7,7 @@ namespace CRUD.Database
     public class DataBase
     {
         private IFirebaseConfig _config;
-        private IFirebaseClient _client;
+        private readonly IFirebaseClient _client;
 
         public DataBase()
         {

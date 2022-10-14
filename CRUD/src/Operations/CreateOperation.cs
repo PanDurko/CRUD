@@ -5,7 +5,7 @@ namespace CRUD.Operations
 {
     public class CreateOperation
     {
-        private IFirebaseClient _client; 
+        private readonly IFirebaseClient _client; 
 
         public CreateOperation(IFirebaseClient client)
         {
@@ -14,7 +14,7 @@ namespace CRUD.Operations
 
         public void Create(int targetId, string firstName, string lastName)
         {
-            User newUser = new User()
+            var newUser = new User
             {
                 FirstName = firstName,
                 LastName = lastName

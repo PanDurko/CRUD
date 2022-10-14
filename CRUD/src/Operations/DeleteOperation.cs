@@ -4,7 +4,7 @@ namespace CRUD.Operations
 {
     public class DeleteOperation
     {
-        private IFirebaseClient _client;
+        private readonly IFirebaseClient _client;
 
         public DeleteOperation(IFirebaseClient client)
         {

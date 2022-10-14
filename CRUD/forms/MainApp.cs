@@ -1,11 +1,11 @@
 using CRUD.Core;
 using CRUD.Facade;
 
-namespace CRUD
+namespace CRUD.forms
 {
     public partial class MainApp : Form
     {
-        private CrudFacade _facade;
+        private readonly CrudFacade _facade;
 
         public MainApp()
         {
