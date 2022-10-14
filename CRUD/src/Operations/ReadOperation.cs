@@ -5,7 +5,7 @@ namespace CRUD.Operations
 {
     public class ReadOperation
     {
-        private IFirebaseClient _client;
+        private readonly IFirebaseClient _client;
 
         public ReadOperation(IFirebaseClient client)
         {
@@ -15,7 +15,7 @@ namespace CRUD.Operations
         public User Read(int targetId)
         {
             var targetUserData = _client.Get($"Users/{targetId}");
-            User outputUser = targetUserData.ResultAs<User>();
+            var outputUser = targetUserData.ResultAs<User>();
             return outputUser;
         }
     }

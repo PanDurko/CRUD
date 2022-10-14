@@ -6,18 +6,17 @@ namespace CRUD.Facade
 {
     public class CrudFacade
     {
-        public CreateOperation CreateOperation { get; private set; }
-        public ReadOperation ReadOperation { get; private set; }
-        public UpdateOperation UpdateOperation { get; private set; }
-        public DeleteOperation DeleteOperation { get; private set; }
+        public CreateOperation? CreateOperation { get; private set; }
+        public ReadOperation? ReadOperation { get; private set; }
+        public UpdateOperation? UpdateOperation { get; private set; }
+        public DeleteOperation? DeleteOperation { get; private set; }
 
-        private DataBase _dataBase;
-        private IFirebaseClient _client;
+        private readonly IFirebaseClient _client;
 
         public CrudFacade()
         {
-            _dataBase = new DataBase();
-            _client = _dataBase.GetClient();
+            var dataBase = new DataBase();
+            _client = dataBase.GetClient();
         }
 
         public void Init()

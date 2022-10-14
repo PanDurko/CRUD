@@ -5,7 +5,7 @@ namespace CRUD.Operations
 {
     public class UpdateOperation
     {
-        private IFirebaseClient _client;
+        private readonly IFirebaseClient _client;
 
         public UpdateOperation(IFirebaseClient client)
         {
@@ -14,7 +14,7 @@ namespace CRUD.Operations
 
         public void Update(int targetId, string firstName, string lastName)
         {
-            User updatedUser = new User()
+            var updatedUser = new User
             {
                 Id = targetId,
                 FirstName = firstName,

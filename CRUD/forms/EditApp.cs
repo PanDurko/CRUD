@@ -1,10 +1,10 @@
 ﻿using CRUD.Facade;
 
-namespace CRUD
+namespace CRUD.forms
 {
     public partial class EditApp : Form
     {
-        private CrudFacade _facade;
+        private readonly CrudFacade _facade;
 
         public EditApp()
         {
@@ -17,7 +17,7 @@ namespace CRUD
         {
             _facade.UpdateOperation.Update(int.Parse(targetIdTb.Text), newFirstNameTb.Text, newLastNameTb.Text);
             MessageBox.Show("Changes saved!");
-            this.Close();
+            Close();
         }
     }
 }

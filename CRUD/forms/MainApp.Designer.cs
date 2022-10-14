@@ -1,4 +1,4 @@
-﻿namespace CRUD
+﻿namespace CRUD.forms
 {
     partial class MainApp
     {
